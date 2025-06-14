@@ -540,7 +540,8 @@
                         <p>Let’s connect and build something incredible together — we’re just a message away!</p>
                     </div>
 
-                    <form action="forms/contact.php" method="post" class="php-email-form">
+                    <form action="#" method="POST" class="php-email-form">
+                        @csrf
                         <div class="mb-3">
                             <label for="contactName" class="form-label">Full Name</label>
                             <input type="text" name="name" class="form-control" id="contactName"
@@ -572,9 +573,7 @@
                         </div>
 
                         <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                            <div class="loading" style="display:none;">Loading</div>
                         </div>
 
                         <button type="submit" class="submit-btn">
@@ -582,10 +581,72 @@
                             <i class="bi bi-arrow-right"></i>
                         </button>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- jQuery (required for AJAX) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $(document).ready(function () {
+        $('.php-email-form').on('submit', function (e) {
+            e.preventDefault(); // prevent default submit
+
+            let form = $(this);
+            let formData = new FormData(this);
+            let submitBtn = form.find('.submit-btn');
+
+            // Disable button to prevent double click
+            submitBtn.prop('disabled', true);
+
+            $.ajax({
+                url: "{{route('contact.store')}}",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function () {
+                    $('.loading').show();
+                },
+                success: function (response) {
+                    $('.loading').hide();
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent',
+                        text: 'Your message has been sent successfully!',
+                    });
+
+                    form[0].reset();
+                },
+                error: function (xhr) {
+                    $('.loading').hide();
+                    let errors = xhr.responseJSON?.errors;
+                    let errorMsg = "Something went wrong. Please try again.";
+
+                    if (errors) {
+                        errorMsg = Object.values(errors).join('\n');
+                    }
+
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: errorMsg
+                    });
+                },
+                complete: function () {
+                    // Always re-enable the button after request
+                    submitBtn.prop('disabled', false);
+                }
+            });
+        });
+    });
+</script>
+
+
 
 @endsection

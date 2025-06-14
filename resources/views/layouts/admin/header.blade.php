@@ -163,7 +163,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none" href="" id="topnav-dashboard"
+                            <a class="nav-link dropdown-toggle arrow-none" href="{{route('contact')}}" id="topnav-dashboard"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon nav-icon" data-feather="monitor"></i>
                                 <span data-key="t-newsData">User Contacts</span>
