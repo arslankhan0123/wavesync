@@ -32,4 +32,11 @@ class ContactController extends Controller
 
         return response()->json(['success' => true, 'message' => 'Message sent successfully.']);
     }
+
+    public function delete(Request $request, $id)
+    {
+        $contact = Contact::find($id);
+        $contact->delete();
+        return redirect()->back()->with('success', 'Contact deleted successfully.');
+    }
 }

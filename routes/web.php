@@ -16,6 +16,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('contact')->group(function () {
         Route::get('/', [ContactController::class, 'index'])->name('contact');
         Route::post('/store', [ContactController::class, 'store'])->name('contact.store');
+        Route::get('/edit/{contact_id}', [ContactController::class, 'edit'])->name('contact.edit');
+        Route::get('/delete/{contact_id}', [ContactController::class, 'delete'])->name('contact.delete');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
