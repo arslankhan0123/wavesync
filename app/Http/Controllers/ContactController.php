@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactFormSubmitted;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -24,6 +26,10 @@ class ContactController extends Controller
         ]);
 
         Contact::create($validated);
+
+        // Send email to admin
+        Mail::to('arslan.devsspace@gmail.com')->send(new ContactFormSubmitted($validated));
+
         return response()->json(['success' => true, 'message' => 'Message sent successfully.']);
     }
 }
