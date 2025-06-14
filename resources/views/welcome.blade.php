@@ -1,5 +1,5 @@
 @extends('layouts.landing.main')
-@section('title', 'Home')
+@section('title', 'Home - Wavesync')
 @section('content')
 
 <!-- Hero Section -->
