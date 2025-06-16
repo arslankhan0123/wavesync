@@ -37,6 +37,9 @@
 
     <!-- Toaster Link -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 
     <!-- Header dropdown css  -->
@@ -529,6 +532,7 @@
             height: 38px !important;
             border: 1px solid #eff0f2 !important;
         }
+
         .select2-container--default .select2-selection--single .select2-selection__rendered {
             line-height: 33px !important;
         }
