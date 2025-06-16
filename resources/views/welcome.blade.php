@@ -178,6 +178,25 @@
 
         <div class="services-grid mt-5">
             <div class="row g-4">
+                @foreach($services as $index => $service)
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="{{ 100 + (($index % 3) * 100) }}">
+                    <div class="service-card">
+                        <div class="card-number">
+                            <span>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="service-title">
+                                <a href="{{ route('services.show', $service->id) }}">{{ $service->icon ?? '🛠️' }} {{ $service->title }}</a>
+                            </h5>
+                            <p class="service-description">
+                                {{ Str::limit(strip_tags($service->short_description ?? $service->long_description), 150) }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            <!-- <div class="row g-4">
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card">
@@ -323,7 +342,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> -->
         </div>
 
     </div>
@@ -593,8 +612,8 @@
 <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    $(document).ready(function () {
-        $('.php-email-form').on('submit', function (e) {
+    $(document).ready(function() {
+        $('.php-email-form').on('submit', function(e) {
             e.preventDefault(); // prevent default submit
 
             let form = $(this);
@@ -610,10 +629,10 @@
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function () {
+                beforeSend: function() {
                     $('.loading').show();
                 },
-                success: function (response) {
+                success: function(response) {
                     $('.loading').hide();
                     Swal.fire({
                         icon: 'success',
@@ -623,7 +642,7 @@
 
                     form[0].reset();
                 },
-                error: function (xhr) {
+                error: function(xhr) {
                     $('.loading').hide();
                     let errors = xhr.responseJSON?.errors;
                     let errorMsg = "Something went wrong. Please try again.";
@@ -638,7 +657,7 @@
                         text: errorMsg
                     });
                 },
-                complete: function () {
+                complete: function() {
                     // Always re-enable the button after request
                     submitBtn.prop('disabled', false);
                 }

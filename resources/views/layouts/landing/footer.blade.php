@@ -28,24 +28,24 @@
                   <div class="col-lg-2 col-md-3 footer-links">
                       <h4>Useful Links</h4>
                       <ul>
-                          <li><a href="/index.html">Home</a></li>
-                          <li><a href="#about">About us</a></li>
-                          <li><a href="#services">Services</a></li>
-                          <li><a href="#contact">Contact Us</a></li>
-                          <li><a href="#">Terms of service</a></li>
-                          <li><a href="#">Privacy policy</a></li>
+                          <li><a href="{{ route('welcome') }}#hero">Home</a></li>
+                          <li><a href="{{ route('welcome') }}#about">About us</a></li>
+                          <li><a href="{{ route('welcome') }}#services">Services</a></li>
+                          <li><a href="{{ route('welcome') }}#contact">Contact Us</a></li>
+                          <!-- <li><a href="#">Terms of service</a></li> -->
+                          <!-- <li><a href="#">Privacy policy</a></li> -->
                       </ul>
                   </div>
 
                   <div class="col-lg-2 col-md-3 footer-links">
                       <h4>Our Services</h4>
                       <ul>
-                          <li><a href="#services">Web Development</a></li>
-                          <li><a href="#services">App Development</a></li>
-                          <li><a href="#services">E-Commerce Store</a></li>
-                          <li><a href="#services">AI Chatbot</a></li>
-                          <li><a href="#services">Full-Stack Development</a></li>
-                          <li><a href="#services">Custom Software Development</a></li>
+                          <li><a href="{{ route('welcome') }}#services">Web Development</a></li>
+                          <li><a href="{{ route('welcome') }}#services">App Development</a></li>
+                          <li><a href="{{ route('welcome') }}#services">E-Commerce Store</a></li>
+                          <li><a href="{{ route('welcome') }}#services">AI Chatbot</a></li>
+                          <li><a href="{{ route('welcome') }}#services">Full-Stack Development</a></li>
+                          <li><a href="{{ route('welcome') }}#services">Custom Software Development</a></li>
                       </ul>
                   </div>
 
