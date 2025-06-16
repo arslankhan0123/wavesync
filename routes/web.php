@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{contact_id}', [ContactController::class, 'edit'])->name('contact.edit');
         Route::post('/update/{contact_id}', [ContactController::class, 'edit'])->name('contact.update');
         Route::get('/delete/{contact_id}', [ContactController::class, 'delete'])->name('contact.delete');
+    });
+
+    Route::prefix('admin-profile')->group(function () {
+        Route::get('/', [AdminProfileController::class, 'index'])->name('admin.profile.index');
+        Route::post('/update', [AdminProfileController::class, 'update'])->name('admin.profile.update');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
