@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ServiceController;
+use App\Models\Contact;
 use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 
@@ -11,12 +12,14 @@ Route::get('/service/details/{id}', [ServiceController::class, 'frontendShow'])-
 
 
 Route::get('/', function () {
-    $services = Service::all();
+    $services = Service::where('status', 1)->latest()->get();
     return view('welcome', compact('services'));
 })->name('welcome');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $services = Service::all();
+    $contacts = Contact::all();
+    return view('dashboard', compact('services', 'contacts'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

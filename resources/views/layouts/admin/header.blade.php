@@ -97,7 +97,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components"
                                 role="button">
                                 <i class="icon nav-icon" data-feather="layers"></i>
@@ -108,7 +108,7 @@
                                 <a href="#" class="dropdown-item" data-key="t-widgets">Users</a>
                                 <a href="#" class="dropdown-item" data-key="t-widgets">Roles</a>
                             </div>
-                        </li>
+                        </li> -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle arrow-none" href="{{route('contact')}}" id="topnav-dashboard"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -92,11 +92,11 @@
         <a href="#">
             <div class="enhanced-card gradient-red">
                 <div class="icon-circle">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-cogs"></i> {{-- Services --}}
                 </div>
                 <div>
-                    <h6>Total Users</h6>
-                    <h2>10</h2>
+                    <h6>Total Services</h6>
+                    <h2>{{ count($services) }}</h2>
                 </div>
             </div>
         </a>
@@ -106,97 +106,11 @@
         <a href="#">
             <div class="enhanced-card gradient-blue">
                 <div class="icon-circle">
-                    <i class="fas fa-user-shield"></i>
+                    <i class="fas fa-address-book"></i> {{-- Contacts --}}
                 </div>
                 <div>
-                    <h6>Total Roles</h6>
-                    <h2>20</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-xl-3 col-sm-6 mb-4">
-        <a href="#">
-            <div class="enhanced-card gradient-green">
-                <div class="icon-circle">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div>
-                    <h6>Total Magazines</h6>
-                    <h2>30</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-xl-3 col-sm-6 mb-4">
-        <a href="#">
-            <div class="enhanced-card gradient-yellow">
-                <div class="icon-circle">
-                    <i class="fab fa-youtube"></i>
-                </div>
-                <div>
-                    <h6>Total Youtubes</h6>
-                    <h2>40</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xl-3 col-sm-6 mb-4">
-        <a href="#">
-            <div class="enhanced-card gradient-blue">
-                <div class="icon-circle">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div>
-                    <h6>Total Breaking News Global</h6>
-                    <h2>12</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-xl-3 col-sm-6 mb-4">
-        <a href="#">
-            <div class="enhanced-card gradient-green">
-                <div class="icon-circle">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div>
-                    <h6>Total Breaking News Local</h6>
-                    <h2>12</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-xl-3 col-sm-6 mb-4">
-        <a href="#">
-            <div class="enhanced-card gradient-yellow">
-                <div class="icon-circle">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div>
-                    <h6>Total Trending News Global</h6>
-                    <h2>1212</h2>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="col-xl-3 col-sm-6 mb-4">
-        <a href="#">
-            <div class="enhanced-card gradient-red">
-                <div class="icon-circle">
-                    <i class="fas fa-broadcast-tower"></i>
-                </div>
-                <div>
-                    <h6>Total Trending News Local</h6>
-                    <h2>33</h2>
+                    <h6>Total Contacts</h6>
+                    <h2>{{ count($contacts) }}</h2>
                 </div>
             </div>
         </a>
@@ -338,9 +252,9 @@
                 <div class="mt-3">
                     <div id="sales-analytics-chart" class="apex-charts" dir="ltr"></div>
                 </div>
-            </div> <!-- end card-body-->
-        </div> <!-- end card-->
-    </div> <!-- end col-->
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
