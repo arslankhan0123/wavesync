@@ -33,6 +33,17 @@ class ContactController extends Controller
         return response()->json(['success' => true, 'message' => 'Message sent successfully.']);
     }
 
+    public function edit(Request $request, $id)
+    {
+        $contact = Contact::find($id);
+        return view('admin.contact.edit', compact('contact'));
+    }
+
+    public function update(Request $request, $contact_id)
+    {
+        dd($contact_id, $request->all());
+    }
+
     public function delete(Request $request, $id)
     {
         $contact = Contact::find($id);
