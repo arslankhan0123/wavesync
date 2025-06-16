@@ -197,7 +197,6 @@
                 @endforeach
             </div>
             <!-- <div class="row g-4">
-
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card">
                         <div class="card-number">
@@ -213,7 +212,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="service-card">
@@ -341,7 +339,6 @@
                         </div>
                     </div>
                 </div>
-
             </div> -->
         </div>
 

@@ -10,6 +10,7 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::latest()->get();
+        dd($services);
         return view('admin.services.index', compact('services'));
     }
 
